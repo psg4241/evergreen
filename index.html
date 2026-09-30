@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Evergreen Restaurant & Rooms Dahanu | Resort, Dining, Lawns & Camping</title>
+  
+  <meta name="description" content="Hotel Evergreen Restaurant & Rooms Dahanu - Your ultimate nature resort getaway in Dahanu. Deluxe AC & Family rooms, multi-cuisine seafood restaurant, grand marriage lawn, swimming pool, night camping, and authentic Chikoo farm agro-tourism. Book on WhatsApp: 9561936356.">
+  <meta name="keywords" content="Hotel Evergreen Dahanu, Evergreen restaurant Dahanu, rooms in Dahanu, Dahanu resort with swimming pool, marriage lawn Dahanu, chikoo farm Dahanu, camping Dahanu, Dahanu seafood restaurant">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Hotel Evergreen Restaurant & Rooms Dahanu">
+  <meta property="og:description" content="Lush nature resort, AC rooms, restaurant, marriage lawn, swimming pool, chikoo orchard & camping in Dahanu.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20%220%22%20%22100%22%20%22100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+  <!-- ===================================================================
+       TOP NOTICE / ANNOUNCEMENT BAR
+       =================================================================== -->
+  <div class="top-notice-bar">
+    <div class="container">
+      <div class="top-notice-text">
+        <span>🌿 <strong>Welcome to Dahanu!</strong> Fresh Chikoo Agro-Tourism • Grand Marriage Lawn • Crystal Swimming Pool</span>
+      </div>
+      <div class="top-contact-links">
+        <a href="https://wa.me/919561936356" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp: +91 9561936356
+        </a>
+        <a href="tel:9561936356">
+          <i class="fa-solid fa-phone"></i> Call: 9561936356
+        </a>
+        <a href="https://share.google/4agrEP8nls6xT2bJB" target="_blank" rel="noopener">
+          <i class="fa-solid fa-location-dot"></i> Dahanu, Maharashtra
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       HEADER & NAVIGATION
+       =================================================================== -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="#" class="logo-wrapper">
+        <div class="logo-icon">
+          <i class="fa-solid fa-tree"></i>
+        </div>
+        <div class="logo-text-wrap">
+          <span class="logo-brand">EVERGREEN</span>
+          <span class="logo-tag">Restaurant & Rooms • Dahanu</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero" class="nav-item active">Home</a></li>
+          <li><a href="#rooms" class="nav-item">Rooms</a></li>
+          <li><a href="#restaurant" class="nav-item">Restaurant</a></li>
+          <li><a href="#weddings" class="nav-item">Events &amp; Lawn</a></li>
+          <li><a href="#pool" class="nav-item">Experiences</a></li>
+          <li><a href="#tour360" class="nav-item">360° Tour</a></li>
+          <li><a href="#gallery" class="nav-item">Gallery</a></li>
+          <li><a href="#location" class="nav-item">Location</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-action-wrap">
+        <button class="btn btn-whatsapp nav-cta" onclick="openWhatsApp('Hello Hotel Evergreen Dahanu, I want to inquire about room booking and resort packages.')">
+          <i class="fa-brands fa-whatsapp"></i> <span class="btn-label">Book Now</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="navLinks">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       HERO SECTION WITH AERIAL DRONE VIDEO
+       =================================================================== -->
+  <section class="hero-section" id="hero">
+    <!-- HTML5 Aerial Drone Background Video (Hotel Evergreen Property & Pool) -->
+    <video autoplay muted loop playsinline preload="auto" id="heroVideo" class="hero-video-bg" 
+           poster="Hero-Banner-Background.mp4">
+      <source src="Hero-Banner-Background.mp4" type="video/mp4">
+    
+    </video>
+
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <i class="fa-solid fa-leaf"></i> Dahanu's Premier Nature & Agro-Tourism Resort
+      </div>
+      <h1 class="hero-title">
+        Hotel Evergreen <br>
+        <span>Restaurant & Rooms</span> Dahanu
+      </h1>
+
+      <!-- Dynamic Animated Text Rotator (Showing Text One After One) -->
+      <div class="hero-animated-showcase" aria-live="polite">
+        <!-- Interactive Typewriter Line -->
+        <div class="hero-typewriter-wrap">
+          <span class="typewriter-prefix">Experience </span>
+          <span class="typewriter-text" id="heroTypewriterText">Lush Chikoo Orchards</span>
+          <span class="typewriter-cursor">|</span>
+        </div>
+
+        <!-- Glassmorphic Highlights Ticker Pill -->
+        <div class="hero-rotator-pill" id="heroRotatorPill">
+          <span class="rotator-badge-tag"><i class="fa-solid fa-sparkles"></i> Highlights</span>
+          <div class="rotator-viewport" id="rotatorViewport">
+            <div class="rotator-slide active" data-index="0">
+              <i class="fa-solid fa-tree"></i> <span><strong>Lush Chikoo Orchards</strong> &bull; GI-Tagged Agro-Tourism Farm</span>
+            </div>
+            <div class="rotator-slide" data-index="1">
+              <i class="fa-solid fa-water-ladder"></i> <span><strong>Crystal Swimming Pool</strong> &bull; Filtered Water & Kids Splash</span>
+            </div>
+            <div class="rotator-slide" data-index="2">
+              <i class="fa-solid fa-utensils"></i> <span><strong>Fresh Coastal Seafood</strong> &bull; Agri Chicken & Traditional Thalis</span>
+            </div>
+            <div class="rotator-slide" data-index="3">
+              <i class="fa-solid fa-champagne-glasses"></i> <span><strong>Grand Marriage Lawn</strong> &bull; 1,500+ Guest Capacity Weddings</span>
+            </div>
+            <div class="rotator-slide" data-index="4">
+              <i class="fa-solid fa-bed"></i> <span><strong>Deluxe AC & Family Suites</strong> &bull; Peaceful Garden Facing Stays</span>
+            </div>
+            <div class="rotator-slide" data-index="5">
+              <i class="fa-solid fa-campground"></i> <span><strong>Night Camping & Bonfire</strong> &bull; Stargazing in Chikoo Country</span>
+            </div>
+          </div>
+          <div class="rotator-dots" id="rotatorDots">
+            <button type="button" class="rotator-dot active" aria-label="Slide 1" data-slide="0"></button>
+            <button type="button" class="rotator-dot" aria-label="Slide 2" data-slide="1"></button>
+            <button type="button" class="rotator-dot" aria-label="Slide 3" data-slide="2"></button>
+            <button type="button" class="rotator-dot" aria-label="Slide 4" data-slide="3"></button>
+            <button type="button" class="rotator-dot" aria-label="Slide 5" data-slide="4"></button>
+            <button type="button" class="rotator-dot" aria-label="Slide 6" data-slide="5"></button>
+          </div>
+        </div>
+      </div>
+
+      <p class="hero-description">
+        Immerse yourself in lush greenery, fresh coastal breeze, and serene chikoo orchards. Offering luxurious AC & family rooms, authentic coastal seafood dining, grand marriage lawn, sparkling swimming pool & starlit camping under one roof.
+      </p>
+
+      <div class="hero-actions">
+        <button class="btn btn-whatsapp btn-lg" onclick="openWhatsApp('Hello Hotel Evergreen Dahanu, I would like to book a stay and check availability.')">
+          <i class="fa-brands fa-whatsapp fa-lg"></i> Instant WhatsApp Booking
+        </button>
+        <a href="#rooms" class="btn btn-outline-white btn-lg">
+          <i class="fa-solid fa-bed"></i> Explore Rooms
+        </a>
+      </div>
+
+      <div class="video-status-indicator">
+        <div class="video-pulse-dot"></div>
+        <span>Aerial Drone View of Property & Swimming Pool</span>
+      </div>
+    </div>
+
+    <!-- Quick Availability Search / WhatsApp Router Bar -->
+    <div class="container hero-booking-bar-wrap">
+      <form class="booking-bar" id="heroBookingForm">
+        <div class="booking-field">
+          <label><i class="fa-solid fa-calendar-day"></i> Check-In Date</label>
+          <input type="date" id="barCheckIn" required>
+        </div>
+
+        <div class="booking-field">
+          <label><i class="fa-solid fa-calendar-check"></i> Check-Out Date</label>
+          <input type="date" id="barCheckOut" required>
+        </div>
+
+        <div class="booking-field">
+          <label><i class="fa-solid fa-hotel"></i> Experience / Stay</label>
+          <select id="barExperience">
+            <option value="Deluxe AC Room">Deluxe AC Room</option>
+            <option value="Comfort Non-AC Room">Comfort Non-AC Room</option>
+            <option value="Spacious Family Suite">Spacious Family Suite</option>
+            <option value="Executive Double Bed">Executive Double Bed</option>
+            <option value="Marriage Lawn & Banquet">Marriage Lawn / Wedding Inquiry</option>
+            <option value="Private Event / Party Space">Party / Event Celebration</option>
+            <option value="Swimming Pool Day Pass">Swimming Pool & Day Picnic</option>
+            <option value="Night Camping & Bonfire">Night Camping & Bonfire</option>
+            <option value="Chikoo Farm Agro Tour">Chikoo Farm Tour & Agro-Tourism</option>
+          </select>
+        </div>
+
+        <div class="booking-field">
+          <label><i class="fa-solid fa-user-group"></i> Guests</label>
+          <select id="barGuests">
+            <option value="1 Guest">1 Guest</option>
+            <option value="2 Adults (Couple)" selected>2 Adults (Couple)</option>
+            <option value="Family (3-4 Persons)">Family (3-4 Persons)</option>
+            <option value="Group (5-10 Persons)">Group (5-10 Persons)</option>
+            <option value="Large Gathering (25+ Guests)">Large Gathering (25+ Guests)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-whatsapp booking-bar-btn">
+          <i class="fa-brands fa-whatsapp fa-lg"></i> Check on WhatsApp
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       KEY PROPERTY STATS / HIGHLIGHTS STRIP
+       =================================================================== -->
+  <section class="highlights-stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fa-solid fa-tree"></i>
+          </div>
+          <div class="stat-text">
+            <h4>Lush Chikoo Orchards</h4>
+            <p>Famous Dahanu GI Agro-Tourism</p>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fa-solid fa-water-ladder"></i>
+          </div>
+          <div class="stat-text">
+            <h4>Crystal Swimming Pool</h4>
+            <p>Kids splash pool & sun lounge</p>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fa-solid fa-utensils"></i>
+          </div>
+          <div class="stat-text">
+            <h4>Evergreen Restaurant</h4>
+            <p>Fresh coastal seafood & Agri thali</p>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fa-solid fa-champagne-glasses"></i>
+          </div>
+          <div class="stat-text">
+            <h4>1000+ Capacity Lawn</h4>
+            <p>Destination weddings & parties</p>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fa-solid fa-campground"></i>
+          </div>
+          <div class="stat-text">
+            <h4>Night Camping & Bonfire</h4>
+            <p>Stargazing & outdoor tents</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       ABOUT HOTEL EVERGREEN DAHANU
+       =================================================================== -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <span class="section-badge"><i class="fa-solid fa-compass"></i> Welcome To Evergreen</span>
+          <h2 class="section-title">A Peaceful Haven in Dahanu's Chikoo Country</h2>
+          <p class="lead">
+            Escape the bustling city life of Mumbai and Gujarat to Hotel Evergreen Restaurant & Rooms — where nature, comfort, and coastal flavors harmonize.
+          </p>
+          <p>
+            Dahanu is world-renowned for its sweet GI-tagged chikoos and pristine Arabian Sea beaches. Hotel Evergreen is strategically set amidst verdant chikoo groves and coconut palms, offering an authentic retreat for families, couples, corporate teams, and destination wedding hosts.
+          </p>
+          <p>
+            Whether you are taking a dip in our sparkling swimming pool, enjoying mouth-watering fresh Surmai fry or Agri chicken in our garden restaurant, camping under starlit skies with a warm bonfire, or picking organic Chikoos from our orchards, we ensure every moment is memorable.
+          </p>
+
+          <div class="about-features-list">
+            <div class="about-feature-item">
+              <i class="fa-solid fa-circle-check"></i> 100% Family Friendly Sanctuary
+            </div>
+            <div class="about-feature-item">
+              <i class="fa-solid fa-circle-check"></i> Farm-Fresh Chikoo Agro-Tourism
+            </div>
+            <div class="about-feature-item">
+              <i class="fa-solid fa-circle-check"></i> Pure Coastal Seafood & Jain Cuisine
+            </div>
+            <div class="about-feature-item">
+              <i class="fa-solid fa-circle-check"></i> Just 10 Mins from Dahanu Station
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <button class="btn btn-primary" onclick="openBookingModal()">
+              <i class="fa-solid fa-calendar-check"></i> Book Your Visit
+            </button>
+            <a href="https://share.google/4agrEP8nls6xT2bJB" target="_blank" rel="noopener" class="btn btn-outline-primary">
+              <i class="fa-solid fa-map-location-dot"></i> View on Google Maps
+            </a>
+          </div>
+        </div>
+
+        <div class="about-image-collage">
+          <img src="Images/Pool/1.JPEG" 
+               alt="Hotel Evergreen Resort Ambiance Dahanu" class="about-main-img">
+          
+          <div class="about-floating-card">
+            <h4>100% Direct</h4>
+            <p>WhatsApp Instant Confirmation without middleman commission.</p>
+            <span style="color: var(--whatsapp-green); font-weight: 700; font-size: 0.88rem;">
+              <i class="fa-brands fa-whatsapp"></i> +91 9561936356
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       1. ROOMS & ACCOMMODATIONS SECTION
+       =================================================================== -->
+  <section class="rooms-section" id="rooms">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge badge-gold"><i class="fa-solid fa-bed"></i> Accommodations</span>
+        <h2 class="section-title">Comfortable Rooms For Every Traveler</h2>
+        <p class="section-subtitle">
+          Designed for peace and relaxation, our rooms feature serene views of the chikoo orchard, lush lawns, and swimming pool. All rooms are maintained with supreme hygiene.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="filter-btn room-filter-btn active" data-filter="all">All Rooms</button>
+        <button class="filter-btn room-filter-btn" data-filter="ac">AC Rooms</button>
+        <button class="filter-btn room-filter-btn" data-filter="non-ac">Non-AC Rooms</button>
+        <button class="filter-btn room-filter-btn" data-filter="family">Family Suites</button>
+        <button class="filter-btn room-filter-btn" data-filter="double">Double Bed</button>
+      </div>
+
+      <!-- Rooms Grid -->
+      <div class="rooms-grid">
+        <!-- Room 1: Deluxe AC Room -->
+        <div class="room-card" data-category="ac double">
+          <div class="room-image-wrap" data-images="Images/Room/1.JPEG|Images/Room/2.JPEG">
+            <span class="room-tag popular">Most Popular</span>
+            <img src="Images/Room/1.JPEG" alt="Deluxe AC Room Hotel Evergreen Dahanu">
+          </div>
+          <div class="room-content">
+            <h3 class="room-title">Deluxe AC Room</h3>
+            <p class="room-desc">
+              Spacious and climate-controlled luxury room with king bed, lush orchard/pool views, ambient lighting, and modern attached bathroom.
+            </p>
+            <div class="room-amenities">
+              <span class="amenity-chip"><i class="fa-solid fa-snowflake"></i> Chilled AC</span>
+              <span class="amenity-chip"><i class="fa-solid fa-wifi"></i> High-Speed Wi-Fi</span>
+              <span class="amenity-chip"><i class="fa-solid fa-tv"></i> LED Smart TV</span>
+              <span class="amenity-chip"><i class="fa-solid fa-shower"></i> Geyser / Hot Water</span>
+              <span class="amenity-chip"><i class="fa-solid fa-eye"></i> Garden View</span>
+            </div>
+            <div class="room-footer">
+              <button class="btn btn-whatsapp btn-sm" onclick="bookSpecificRoom('Deluxe AC Room')">
+                <i class="fa-brands fa-whatsapp"></i> Book Room
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Room 2: Premium Non-AC Room -->
+        <div class="room-card" data-category="non-ac double">
+          <div class="room-image-wrap" data-images="Images/Room/3.JPEG|Images/Room/4.JPEG">
+            <span class="room-tag">Value Comfort</span>
+            <img src="Images/Room/3.JPEG" alt="Comfort Non AC Room Dahanu">
+          </div>
+          <div class="room-content">
+            <h3 class="room-title">Comfort Non-AC Room</h3>
+            <p class="room-desc">
+              Naturally breezy and airy room with large windows facing the chikoo trees, high-speed ceiling fans, king/double bed, and pristine clean bathroom.
+            </p>
+            <div class="room-amenities">
+              <span class="amenity-chip"><i class="fa-solid fa-fan"></i> Cross Ventilation</span>
+              <span class="amenity-chip"><i class="fa-solid fa-wifi"></i> Free Wi-Fi</span>
+              <span class="amenity-chip"><i class="fa-solid fa-bed"></i> Comfortable Bed</span>
+              <span class="amenity-chip"><i class="fa-solid fa-shower"></i> 24h Hot Water</span>
+              <span class="amenity-chip"><i class="fa-solid fa-tree"></i> Orchard Breeze</span>
+            </div>
+            <div class="room-footer">
+              <button class="btn btn-whatsapp btn-sm" onclick="bookSpecificRoom('Comfort Non-AC Room')">
+                <i class="fa-brands fa-whatsapp"></i> Book Room
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Room 3: Spacious Family Suite -->
+        <div class="room-card" data-category="family ac">
+          <div class="room-image-wrap" data-images="Images/Room/5.JPEG|Images/Room/6.JPEG">
+            <span class="room-tag popular">Family Choice</span>
+            <img src="Images/Room/5.JPEG" alt="Spacious Family Suite Dahanu">
+          </div>
+          <div class="room-content">
+            <h3 class="room-title">Grand Family Suite</h3>
+            <p class="room-desc">
+              Specially designed for families and group vacations. Accommodates 4 to 6 guests with extra bedding, sofa lounge, and scenic balcony.
+            </p>
+            <div class="room-amenities">
+              <span class="amenity-chip"><i class="fa-solid fa-users"></i> Sleeps 4 - 6</span>
+              <span class="amenity-chip"><i class="fa-solid fa-snowflake"></i> Double AC</span>
+              <span class="amenity-chip"><i class="fa-solid fa-couch"></i> Living Seating</span>
+              <span class="amenity-chip"><i class="fa-solid fa-tv"></i> 43&quot; TV</span>
+              <span class="amenity-chip"><i class="fa-solid fa-champagne-glasses"></i> Balcony</span>
+            </div>
+            <div class="room-footer">
+              <button class="btn btn-whatsapp btn-sm" onclick="bookSpecificRoom('Grand Family Suite (4-6 Guests)')">
+                <i class="fa-brands fa-whatsapp"></i> Book Room
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Room 4: Executive Double Bed Room -->
+        <div class="room-card" data-category="double ac">
+          <div class="room-image-wrap" data-images="Images/Room/7.JPEG|Images/Room/8.JPEG">
+            <span class="room-tag">Couples & Leisure</span>
+            <img src="Images/Room/7.JPEG" alt="Executive Double Bed Room Dahanu">
+          </div>
+          <div class="room-content">
+            <h3 class="room-title">Executive Double Bed</h3>
+            <p class="room-desc">
+              Cozy, elegant, and peaceful room equipped with a plush double bed, tea/coffee maker, workstation desk, and garden view windows.
+            </p>
+            <div class="room-amenities">
+              <span class="amenity-chip"><i class="fa-solid fa-bed"></i> Premium Double Bed</span>
+              <span class="amenity-chip"><i class="fa-solid fa-snowflake"></i> Split AC</span>
+              <span class="amenity-chip"><i class="fa-solid fa-wifi"></i> High-Speed Wi-Fi</span>
+              <span class="amenity-chip"><i class="fa-solid fa-bell-concierge"></i> Room Service</span>
+              <span class="amenity-chip"><i class="fa-solid fa-mug-hot"></i> Tea/Coffee</span>
+            </div>
+            <div class="room-footer">
+              <button class="btn btn-whatsapp btn-sm" onclick="bookSpecificRoom('Executive Double Bed Room')">
+                <i class="fa-brands fa-whatsapp"></i> Book Room
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Room Assistance Banner -->
+      <div style="margin-top: 40px; background: #ffffff; padding: 25px; border-radius: var(--radius-md); border: 1px dashed var(--border-gold); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+        <div>
+          <h4 style="color: var(--primary-dark); font-size: 1.15rem; margin-bottom: 4px;">
+            <i class="fa-solid fa-calendar-days text-gold"></i> Need Special Group or Weekend Packages?
+          </h4>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">
+            We offer custom tariff discounts for corporate bookings, wedding parties, and long weekend stays.
+          </p>
+        </div>
+        <button class="btn btn-whatsapp" onclick="openWhatsApp('Hello Hotel Evergreen, I would like to inquire about group stay discounts and custom tariffs for our upcoming dates.')">
+          <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp (9561936356)
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       2. EVERGREEN RESTAURANT SECTION
+       =================================================================== -->
+  <section class="restaurant-section" id="restaurant">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-utensils"></i> Authentic Dining</span>
+        <h2 class="section-title">Evergreen Multi-Cuisine Restaurant</h2>
+        <p class="section-subtitle">
+          Savour the authentic taste of the Konkan coast, rustic Agri specialties, pure vegetarian delicacies, and heavenly farm-fresh Dahanu Chikoo desserts.
+        </p>
+      </div>
+
+      <div class="dining-grid">
+        <div class="dining-img-stack">
+          <img src="Images/restaurant/RES1.jpeg" alt="Fresh Coastal Seafood Tawa Fry" class="dining-img">
+          <img src="Images/restaurant/RES2.jpg" alt="Evergreen Restaurant Dining Ambiance" class="dining-img">
+          <img src="Images/restaurant/RES3.jpg" alt="Maharashtrian Agri Chicken & Bhakri" class="dining-img">
+          <img src="Images/restaurant/RES4.jpg" alt="Fresh Dahanu Chikoo Milkshake & Desserts" class="dining-img">
+        </div>
+
+        <div class="dining-info">
+          <h3 class="font-serif" style="font-size: 1.85rem; color: var(--primary-dark); margin-bottom: 14px;">
+            Fresh Catch & Farm-to-Table Flavours
+          </h3>
+          <p style="color: var(--text-secondary); margin-bottom: 20px;">
+            Located right near Dahanu's coastal ports, our chefs source fresh catch daily. From crispy Rava Surmai and garlic butter prawns to authentic Maharashtrian village Agri Chicken and piping hot Bhakris, every dish is an explosion of flavours.
+          </p>
+          <p style="color: var(--text-secondary); margin-bottom: 25px;">
+            For our vegetarian guests, we offer dedicated pure vegetarian and Jain dishes prepared with spotless cleanliness, followed by our world-famous Dahanu Chikoo Milkshake made from chikoos harvested right outside!
+          </p>
+
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <button class="btn btn-whatsapp" onclick="inquireFeature('restaurant')">
+              <i class="fa-brands fa-whatsapp"></i> Reserve Table / Order on WhatsApp
+            </button>
+            <button class="btn btn-outline-primary" onclick="openLightbox('Images/Menu-card/menu-card.png','Evergreen Restaurant Menu Card')">
+              <i class="fa-solid fa-book-open"></i> View Menu Card
+            </button>
+            <button class="btn btn-primary" onclick="openWhatsApp('Hello Evergreen Restaurant, please send me your complete food menu with prices.')">
+              <i class="fa-solid fa-book-open"></i> Request Complete Menu
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Menu Showcase -->
+      <div class="dining-menu-highlights">
+        <h4 class="font-serif" style="font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; text-align: center;">
+          Chef's Handpicked Specialties
+        </h4>
+
+        <div class="menu-category-tabs">
+          <button class="menu-tab-btn active" data-menu="seafood">Coastal Seafood Catch</button>
+          <button class="menu-tab-btn" data-menu="agri">Agri & Desi Non-Veg</button>
+          <button class="menu-tab-btn" data-menu="veg">Pure Veg & Jain Special</button>
+          <button class="menu-tab-btn" data-menu="chikoo">Dahanu Chikoo Delights</button>
+        </div>
+
+        <!-- Seafood Group -->
+        <div class="menu-items-list menu-items-group" id="menu-seafood">
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h5><span class="nonveg-icon"></span> Fresh Surmai Rava Fry / Curry</h5>
+              <p>Fresh kingfish coated in spiced semolina, tawa fried to golden crispness.</p>
+            </div>
+            <span class="menu-item-badge">Bestseller</span>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h5><span class="nonveg-icon"></span> Silver Pomfret Tawa Masala</h5>
+              <p>Whole fresh pomfret marinated in coastal green herbs and roasted spice paste.</p>
+            </div>
+            <span class="menu-item-badge">Chef Special</span>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h5><span class="nonveg-icon"></span> Jumbo Prawns Koliwada</h5>
+              <p>Crispy batter fried prawns served with fiery mint chutney & sliced onions.</p>
+            </div>
+            <span class="menu-item-badge">Must Try</span>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h5><span class="nonveg-icon"></span> Coastal Crab Masala / Sukka</h5>
+              <p>Local mud crab cooked in thick, fragrant coconut-roasted coriander gravy.</p>
+            </div>
+            <span class="menu-item-badge">Seasonal</span>
+          </div>
+        </div>
+
+        <!-- Agri Group -->
+        <div class="menu-items-list menu-items-group" id="menu-agri" style="display: none;">
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h5><span class="nonveg-icon"></span> Authentic Agri Mutton Sukka</h5>
+              <p>Tender mutton slow-cooked in traditional Agri masala with toasted sesame.</p>
+            </div>
+            <span class="menu-item-badge">Traditional</span>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h5><span class="nonveg-icon"></span> Desi Chicken Handi with Bhakri</h5>
+              <p>Country chicken in rich spicy brown gravy served with warm Rice/Jowar Bhakri.</p>
+            </div>
+            <span class="menu-item-badge">Bestseller</span>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h5><span class="nonveg-icon"></span> Evergreen Special Mutton Thali</h5>
+              <p>Complete feast: Mutton curry, Sukka, Alani broth soup, 2 Bhakris, Indrayani rice & Solkadhi.</p>
+            </div>
+            <span class="menu-item-badge">Grand Thali</span>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h5><span class="veg-icon"></span> Refreshing Solkadhi</h5>
+              <p>Digestive drink made from freshly squeezed coconut milk and pure Konkan Kokum.</p>
+            </div>
+            <span class="menu-item-badge">Cooler</span>
+          </div>
+        </div>
+
+        <!-- Veg Group -->
+        <div class="menu-items-list menu-items-group" id="menu-veg" style="display: none;">
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h5><span class="veg-icon"></span> Paneer Tikka Tawa Masala</h5>
+              <p>Fresh cottage cheese cubes sauteed with bell peppers in rich cashew tomato gravy.</p>
+            </div>
+            <span class="menu-item-badge">Popular</span>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h5><span class="veg-icon"></span> Dahanu Farm Veg Kolhapuri</h5>
+              <p>Fresh garden vegetables cooked with spicy Maharashtrian roasted chili paste.</p>
+            </div>
+            <span class="menu-item-badge">Spicy</span>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h5><span class="veg-icon"></span> Dal Tadka & Jeera Rice</h5>
+              <p>Yellow lentils tempered with ghee, garlic, cumin, and dry red chillies.</p>
+            </div>
+            <span class="menu-item-badge">Comfort</span>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h5><span class="veg-icon"></span> Jain Special Preparations</h5>
+              <p>Dedicated food cooked strictly without onion, garlic, or root vegetables on request.</p>
+            </div>
+            <span class="menu-item-badge">Custom</span>
+          </div>
+        </div>
+
+        <!-- Chikoo Delights Group -->
+        <div class="menu-items-list menu-items-group" id="menu-chikoo" style="display: none;">
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h5><span class="veg-icon"></span> Signature Dahanu Chikoo Milkshake</h5>
+              <p>Thick, velvety milkshake made with 100% natural, sweet, tree-ripened organic chikoos.</p>
+            </div>
+            <span class="menu-item-badge">Iconic Must Try</span>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h5><span class="veg-icon"></span> Chikoo Kulfi / Handcrafted Ice Cream</h5>
+              <p>Slow-reduced creamy milk infused with pure sun-kissed Dahanu chikoo pulp.</p>
+            </div>
+            <span class="menu-item-badge">Dessert</span>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h5><span class="veg-icon"></span> Evergreen Chikoo Halwa</h5>
+              <p>Warm traditional dessert cooked with pure ghee, roasted mawa, and chikoo puree.</p>
+            </div>
+            <span class="menu-item-badge">Special</span>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h5><span class="veg-icon"></span> Freshly Plucked Chikoo Fruit Basket</h5>
+              <p>Sweet, organic chikoos picked straight from our surrounding orchard.</p>
+            </div>
+            <span class="menu-item-badge">Farm Fresh</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       4. GRAND MARRIAGE LAWN & CELEBRATIONS SECTION
+       =================================================================== -->
+  <section class="celebrations-section" id="weddings">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge badge-light"><i class="fa-solid fa-ring"></i> Grand Events & Occasions</span>
+        <h2 class="section-title light">Grand Marriage Lawn & Event Spaces</h2>
+        <p class="section-subtitle light">
+          Host fairytale destination weddings, royal receptions, birthday parties, and corporate offsites on our sprawling, manicured green lawns accommodating up to 1,500+ guests.
+        </p>
+      </div>
+
+      <div class="celebrations-grid">
+        <!-- Card 1: Marriage Lawn -->
+        <div class="celebration-card">
+          <div class="celebration-img-wrap">
+            <span class="room-tag popular" style="top: 15px; left: 15px; background: var(--accent-gold); color: var(--primary-dark);"><i class="fa-solid fa-tree"></i> Evergreen Lawn</span>
+            <img src="Images/lawn/LAWN1.jpg" alt="Destination Wedding & Marriage Lawn Dahanu">
+          </div>
+          <div class="celebration-body">
+            <h3>Destination Marriage Lawn</h3>
+            <p>
+              An open-air lush green setting for dream weddings. Equipped with grand mandap stages, magical fairy lights, royal entry carpets, and tranquil nature surroundings.
+            </p>
+            <ul class="celebration-features">
+              <li><i class="fa-solid fa-check"></i> Capacity: 300 to 1,500+ Guests</li>
+              <li><i class="fa-solid fa-check"></i> High-End Sound, DJ & Stage Illumination</li>
+              <li><i class="fa-solid fa-check"></i> Customized Buffet Catering (Veg, Jain, Non-Veg)</li>
+              <li><i class="fa-solid fa-check"></i> Bride & Groom AC Green Rooms</li>
+              <li><i class="fa-solid fa-check"></i> Guest Rooms & Ample Bus/Car Parking</li>
+            </ul>
+            <div class="celebration-cta" style="display: flex; flex-direction: column; gap: 8px;">
+              <button class="btn btn-whatsapp" style="width: 100%;" onclick="inquireFeature('wedding')">
+                <i class="fa-brands fa-whatsapp"></i> Inquire Wedding Lawn on WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Parties & Celebrations (3) -->
+        <div class="celebration-card" id="parties">
+          <div class="celebration-img-wrap">
+            <img src="Images/lawn/LAWN2.JPG" alt="Private Parties and Celebrations Dahanu">
+          </div>
+          <div class="celebration-body">
+            <h3>Parties & Private Bashes</h3>
+            <p>
+              Celebrate life's precious milestones in style! Perfect for birthday bashes, anniversary dinners, kitty parties, poolside cocktails, and family reunions.
+            </p>
+            <ul class="celebration-features">
+              <li><i class="fa-solid fa-check"></i> Customized Thematic Party Décor</li>
+              <li><i class="fa-solid fa-check"></i> Poolside Party & Barbecue Setup</li>
+              <li><i class="fa-solid fa-check"></i> Live Music, DJ & Dance Floor</li>
+              <li><i class="fa-solid fa-check"></i> Starter & Mocktail Stations</li>
+              <li><i class="fa-solid fa-check"></i> Special Kids Play Area Arrangements</li>
+            </ul>
+            <div class="celebration-cta">
+              <button class="btn btn-whatsapp" style="width: 100%;" onclick="inquireFeature('parties')">
+                <i class="fa-brands fa-whatsapp"></i> Plan Your Party on WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Corporate & Group Outings -->
+        <div class="celebration-card">
+          <div class="celebration-img-wrap">
+            <img src="Images/lawn/LAWN2.JPG" alt="Corporate Retreat and Team Outing Dahanu">
+          </div>
+          <div class="celebration-body">
+            <h3>Corporate Offsites & Outings</h3>
+            <p>
+              Re-energize your corporate team away from concrete boardrooms. Open spaces for team-building games, turf cricket, seminar discussions, and relaxing evening dinners.
+            </p>
+            <ul class="celebration-features">
+              <li><i class="fa-solid fa-check"></i> Dedicated Open & Semi-Covered Spaces</li>
+              <li><i class="fa-solid fa-check"></i> Day-Picnic & Overnight Stay Packages</li>
+              <li><i class="fa-solid fa-check"></i> High-Speed Wi-Fi & Projector Setup</li>
+              <li><i class="fa-solid fa-check"></i> Swimming Pool & Indoor Games Access</li>
+              <li><i class="fa-solid fa-check"></i> Full Board Buffet Breakfast, Lunch & Dinner</li>
+            </ul>
+            <div class="celebration-cta">
+              <button class="btn btn-whatsapp" style="width: 100%;" onclick="openWhatsApp('Hello Hotel Evergreen, we are planning a Corporate Team Outing / Offsite in Dahanu. Please share your corporate package details and tariff.')">
+                <i class="fa-brands fa-whatsapp"></i> Inquire Corporate Package
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       RESORT EXPERIENCES: POOL, CAMPING & CHIKOO FARM
+       =================================================================== -->
+  <section class="experiences-section">
+    <div class="container">
+
+      <!-- 5. SWIMMING POOL -->
+      <div class="experience-feature-row" id="pool">
+        <div class="experience-visual" data-images="Images/Pool/1.JPEG|Images/Pool/2.JPEG|Images/Pool/3.JPEG|Images/Pool/4.PNG">
+          <img src="Images/Pool/1.JPEG" alt="Swimming Pool Hotel Evergreen Dahanu" class="experience-main-img">
+          <div class="experience-badge-card">
+            <i class="fa-solid fa-water-ladder"></i>
+            <div>
+              <strong style="display: block;">Crystal Blue Pool</strong>
+              <small>Cleaned & Filtered Daily</small>
+            </div>
+          </div>
+        </div>
+        <div class="experience-content">
+          <span class="section-badge"><i class="fa-solid fa-water"></i> Aquatic Bliss</span>
+          <h3>5. Sparkling Swimming Pool & Kids Splash</h3>
+          <p>
+            Beat the heat and dive into our crystal-clear outdoor swimming pool surrounded by swaying palm and chikoo trees. Whether you wish to swim leisurely laps, bask on comfortable poolside loungers with a cool chikoo drink, or watch your little ones play safely in the shallow kids pool zone, our pool area is your personal oasis.
+          </p>
+          <div class="experience-perks">
+            <div class="experience-perk"><i class="fa-solid fa-check-double"></i> Separate Shallow Kids Zone</div>
+            <div class="experience-perk"><i class="fa-solid fa-check-double"></i> Sunbeds & Towel Facility</div>
+            <div class="experience-perk"><i class="fa-solid fa-check-double"></i> Day Picnic Pass Available</div>
+            <div class="experience-perk"><i class="fa-solid fa-check-double"></i> Poolside Food & Beverage Service</div>
+          </div>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <button class="btn btn-whatsapp" onclick="inquireFeature('pool')">
+              <i class="fa-brands fa-whatsapp"></i> Book Pool Pass / Picnic on WhatsApp
+            </button>
+            <button class="btn btn-outline-primary" onclick="openTour('pool')"><i class="fa-solid fa-vr-cardboard"></i> View in 360° Tour</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. CAMPING & BONFIRE AREA -->
+      <div class="experience-feature-row reverse" id="camping">
+        <div class="experience-visual" data-images="Images/Camping/camp1.jpg|Images/Camping/camp2.jpg">
+          <img src="Images/Camping/camp1.jpeg" alt="Night Camping and Bonfire Dahanu" class="experience-main-img">
+          <div class="experience-badge-card">
+            <i class="fa-solid fa-fire"></i>
+            <div>
+              <strong style="display: block;">Bonfire & Stars</strong>
+              <small>Safe & Gated Resort Camping</small>
+            </div>
+          </div>
+        </div>
+        <div class="experience-content">
+          <span class="section-badge badge-gold"><i class="fa-solid fa-campground"></i> Outdoor Adventure</span>
+          <h3>6. Night Camping Area & Warm Bonfire</h3>
+          <p>
+            Experience the thrill of authentic tent camping without sacrificing comfort and security. Pitch your tent on our green camping grounds, gather around a crackling evening bonfire with acoustic songs, savor sizzling barbecue skewers, and sleep under millions of stars away from urban light pollution.
+          </p>
+          <div class="experience-perks">
+            <div class="experience-perk"><i class="fa-solid fa-check-double"></i> Weatherproof Tents with Bedding</div>
+            <div class="experience-perk"><i class="fa-solid fa-check-double"></i> Evening Bonfire & Live Barbecue</div>
+            <div class="experience-perk"><i class="fa-solid fa-check-double"></i> Safe, Gated & 24/7 Monitored</div>
+            <div class="experience-perk"><i class="fa-solid fa-check-double"></i> Clean Restrooms & Hot Showers</div>
+          </div>
+          <button class="btn btn-whatsapp" onclick="inquireFeature('camping')">
+            <i class="fa-brands fa-whatsapp"></i> Inquire Camping Packages on WhatsApp
+          </button>
+            <button class="btn btn-outline-primary" onclick="openTour('camping')"><i class="fa-solid fa-vr-cardboard"></i> View in 360° Tour</button>
+        </div>
+      </div>
+
+      <!-- 7. CHIKOO FARM AGRO-TOURISM -->
+      <div class="experience-feature-row" id="chikoo">
+        <div class="experience-visual">
+          <img src="Images/Chikoo-farm/b1.png" alt="Chikoo Farm Agro Tourism Dahanu" class="experience-main-img">
+          <div class="experience-badge-card">
+            <i class="fa-solid fa-seedling"></i>
+            <div>
+              <strong style="display: block;">Dahanu Chikoo Hub</strong>
+              <small>Geographical Indication (GI) Tag</small>
+            </div>
+          </div>
+        </div>
+        <div class="experience-content">
+          <span class="section-badge"><i class="fa-solid fa-tree"></i> Agro-Tourism</span>
+          <h3>7. Authentic Chikoo Farm Agro-Tourism</h3>
+          <p>
+            Dahanu is the Chikoo Capital of Maharashtra! At Hotel Evergreen, our property is framed by lush, fragrant Chikoo (Sapodilla) orchards. Take a gentle morning walk under the canopy of deep green trees, learn about organic horticulture from local farmers, experience fruit plucking in season, and take home crates of freshly harvested farm chikoos.
+          </p>
+          <div class="experience-perks">
+            <div class="experience-perk"><i class="fa-solid fa-check-double"></i> Guided Orchard Nature Walks</div>
+            <div class="experience-perk"><i class="fa-solid fa-check-double"></i> Seasonal Fruit Plucking Experience</div>
+            <div class="experience-perk"><i class="fa-solid fa-check-double"></i> Buy Fresh Organic Chikoos at Source</div>
+            <div class="experience-perk"><i class="fa-solid fa-check-double"></i> Pure Homemade Chikoo Chips & Products</div>
+          </div>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <button class="btn btn-whatsapp" onclick="inquireFeature('chikoo_farm')">
+              <i class="fa-brands fa-whatsapp"></i> Book Farm Visit on WhatsApp
+            </button>
+            <button class="btn btn-outline-primary" onclick="openTour('chikoo')"><i class="fa-solid fa-vr-cardboard"></i> View in 360° Tour</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       MORE RESORT AMENITIES ("And Many More..")
+       =================================================================== -->
+  <section class="amenities-section" id="amenities">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge badge-gold"><i class="fa-solid fa-star"></i> Resort Features</span>
+        <h2 class="section-title">And Many More Delights For You</h2>
+        <p class="section-subtitle">
+          Everything you need for a comfortable, fun-filled, and relaxing holiday with family and friends.
+        </p>
+      </div>
+
+      <div class="amenities-grid">
+        <div class="amenity-card">
+          <div class="amenity-icon-box">
+            <i class="fa-solid fa-children"></i>
+          </div>
+          <h4>Kids Play Park</h4>
+          <p>Safe outdoor garden with slides, swings, and see-saws so little ones have a joyous time.</p>
+        </div>
+
+        <div class="amenity-card">
+          <div class="amenity-icon-box">
+            <i class="fa-solid fa-dice"></i>
+          </div>
+          <h4>Indoor Games Lounge</h4>
+          <p>Challenge friends to Carrom, Chess, Playing Cards, and fun family board games.</p>
+        </div>
+
+        <div class="amenity-card">
+          <div class="amenity-icon-box">
+            <i class="fa-solid fa-baseball-bat-ball"></i>
+          </div>
+          <h4>Outdoor Lawn Turf</h4>
+          <p>Lush green spaces to play friendly games of Cricket, Badminton, and Volleyball.</p>
+        </div>
+
+        <div class="amenity-card">
+          <div class="amenity-icon-box">
+            <i class="fa-solid fa-square-parking"></i>
+          </div>
+          <h4>Spacious Free Parking</h4>
+          <p>Massive, secure parking area capable of hosting over 100+ private cars and tour buses.</p>
+        </div>
+
+        <div class="amenity-card">
+          <div class="amenity-icon-box">
+            <i class="fa-solid fa-wifi"></i>
+          </div>
+          <h4>High-Speed Wi-Fi</h4>
+          <p>Seamless wireless internet coverage across guest rooms, restaurant, and lobby areas.</p>
+        </div>
+
+        <div class="amenity-card">
+          <div class="amenity-icon-box">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <h4>24/7 Power Generator</h4>
+          <p>Full power backup with heavy-duty silent generators ensuring uninterrupted comfort.</p>
+        </div>
+
+        <div class="amenity-card">
+          <div class="amenity-icon-box">
+            <i class="fa-solid fa-umbrella-beach"></i>
+          </div>
+          <h4>Close to Beaches</h4>
+          <p>Quick 15-minute scenic drive to Dahanu Beach and Bordi Beach for sunset walks.</p>
+        </div>
+
+        <div class="amenity-card">
+          <div class="amenity-icon-box">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h4>CCTV & 24/7 Security</h4>
+          <p>Round-the-clock security staff and surveillance ensuring safety for families and guests.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       360° FARM TOUR
+       =================================================================== -->
+  <section class="tour-section" id="tour360">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge badge-light"><i class="fa-solid fa-vr-cardboard"></i> Virtual Tour</span>
+        <h2 class="section-title light">Explore Evergreen in 360°</h2>
+        <p class="section-subtitle light">Pick an area below. Drag the aerial farm view (or tilt your phone) to look around, or flip through photos of the lawn, pool, rooms, restaurant and more.</p>
+      </div>
+      <div class="tour-chips" id="tourChips" role="tablist"></div>
+      <div class="tour-layout">
+        <div>
+          <div class="tour-stage" id="tourStage">
+            <div class="tour-pano" id="tourPano"><canvas class="tour-sphere" id="tourSphere"></canvas><img id="tourPanoImg" alt="" draggable="false"></div>
+            <img class="tour-photo" id="tourPhoto" alt="">
+            <div class="tour-badge" id="tourBadge"></div>
+            <div class="tour-hint" id="tourHint"><i class="fa-solid fa-hand"></i> <span id="tourHintText">Drag to look around</span></div>
+            <div class="tour-toast" id="tourToast" role="status"></div>
+            <button class="tour-arrow prev" id="tourPrev" aria-label="Previous photo"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="tour-arrow next" id="tourNext" aria-label="Next photo"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="tour-controls" id="tourPanoControls">
+              <button id="panLeft" aria-label="Pan left"><i class="fa-solid fa-arrow-left"></i></button>
+              <button id="panRight" aria-label="Pan right"><i class="fa-solid fa-arrow-right"></i></button>
+              <button id="zoomOut" aria-label="Zoom out"><i class="fa-solid fa-minus"></i></button>
+              <button id="zoomIn" aria-label="Zoom in"><i class="fa-solid fa-plus"></i></button>
+              <button id="panGyro" aria-label="Move phone to look around" title="Gyro: move your phone to look around"><i class="fa-solid fa-mobile-screen-button"></i></button>
+              <button id="panAuto" aria-label="Auto rotate"><i class="fa-solid fa-rotate"></i></button>
+            </div>
+            <div class="tour-counter" id="tourCounter"></div>
+            <button class="tour-fs" id="tourFs" aria-label="Full screen"><i class="fa-solid fa-expand"></i></button>
+          </div>
+          <div class="tour-thumbs" id="tourThumbs"></div>
+        </div>
+        <aside class="tour-info">
+          <span class="tour-info-icon" id="tourIcon"></span>
+          <h3 id="tourTitle"></h3>
+          <p id="tourDesc"></p>
+          <ul id="tourPerks"></ul>
+          <button class="btn btn-whatsapp" id="tourCta"><i class="fa-brands fa-whatsapp"></i> Enquire on WhatsApp</button>
+          <button class="btn btn-outline-white" id="tourNextArea">Next area <i class="fa-solid fa-arrow-right"></i></button>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       PHOTO & EXPERIENCE GALLERY
+       =================================================================== -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-camera-retro"></i> Visual Tour</span>
+        <h2 class="section-title">A Glimpse into Evergreen Life</h2>
+        <p class="section-subtitle">
+          Browse through our curated gallery showcasing our tranquil rooms, vibrant restaurant dishes, pool, marriage lawns, and orchard gardens.
+        </p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="filter-btn gallery-filter-btn active" data-gallery="all">All Photos</button>
+        <button class="filter-btn gallery-filter-btn" data-gallery="rooms">Rooms</button>
+        <button class="filter-btn gallery-filter-btn" data-gallery="restaurant">Restaurant</button>
+        <button class="filter-btn gallery-filter-btn" data-gallery="pool">Swimming Pool</button>
+        <button class="filter-btn gallery-filter-btn" data-gallery="lawns">Marriage Lawn</button>
+        <button class="filter-btn gallery-filter-btn" data-gallery="farm">Chikoo Farm & Camping</button>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item" data-category="rooms">
+          <img src="Images/Room/1.JPEG" alt="Room 1" loading="lazy">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Room 1</span></div>
+        </div>
+        <div class="gallery-item" data-category="rooms">
+          <img src="Images/Room/2.JPEG" alt="Room 2" loading="lazy">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Room 2</span></div>
+        </div>
+        <div class="gallery-item" data-category="rooms">
+          <img src="Images/Room/3.JPEG" alt="Room 3" loading="lazy">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Room 3</span></div>
+        </div>
+        <div class="gallery-item" data-category="rooms">
+          <img src="Images/Room/4.JPEG" alt="Room 4" loading="lazy">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Room 4</span></div>
+        </div>
+        <div class="gallery-item" data-category="rooms">
+          <img src="Images/Room/5.JPEG" alt="Room 5" loading="lazy">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Room 5</span></div>
+        </div>
+        <div class="gallery-item" data-category="rooms">
+          <img src="Images/Room/6.JPEG" alt="Room 6" loading="lazy">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Room 6</span></div>
+        </div>
+        <div class="gallery-item" data-category="rooms">
+          <img src="Images/Room/7.JPEG" alt="Room 7" loading="lazy">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Room 7</span></div>
+        </div>
+        <div class="gallery-item" data-category="rooms">
+          <img src="Images/Room/8.JPEG" alt="Room 8" loading="lazy">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Room 8</span></div>
+        </div>
+        <div class="gallery-item" data-category="restaurant">
+          <img src="Images/restaurant/RES1.JPeG" alt="Evergreen Restaurant Dining" loading="lazy">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Evergreen Restaurant Dining</span></div>
+        </div>
+        <div class="gallery-item" data-category="restaurant">
+          <img src="Images/restaurant/RES2.JPG" alt="Garden Dining Ambiance" loading="lazy">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Garden Dining Ambiance</span></div>
+        </div>
+        <div class="gallery-item" data-category="restaurant">
+          <img src="Images/restaurant/RES3.JPG" alt="Seating & Interiors" loading="lazy">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Seating & Interiors</span></div>
+        </div>
+        <div class="gallery-item" data-category="restaurant">
+          <img src="Images/restaurant/RES4.JPG" alt="Restaurant Corner" loading="lazy">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Restaurant Corner</span></div>
+        </div>
+        <div class="gallery-item" data-category="restaurant">
+          <img src="Images/restaurant/RES5.JPG" alt="Evening at the Restaurant" loading="lazy">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Evening at the Restaurant</span></div>
+        </div>
+        <div class="gallery-item" data-category="restaurant">
+          <img src="Images/Menu-card/menu-card.png" alt="Evergreen Menu Card" loading="lazy">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Evergreen Menu Card</span></div>
+        </div>
+        <div class="gallery-item" data-category="pool">
+          <img src="Images/Pool/1.JPEG" alt="Swimming Pool" loading="lazy">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Swimming Pool</span></div>
+        </div>
+        <div class="gallery-item" data-category="pool">
+          <img src="Images/Pool/2.JPEG" alt="Swimming Pool" loading="lazy">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Swimming Pool</span></div>
+        </div>
+        <div class="gallery-item" data-category="pool">
+          <img src="Images/Pool/3.JPEG" alt="Swimming Pool" loading="lazy">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Swimming Pool</span></div>
+        </div>
+        <div class="gallery-item" data-category="pool">
+          <img src="Images/Pool/4.PNG" alt="Swimming Pool" loading="lazy">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Swimming Pool</span></div>
+        </div>
+        <div class="gallery-item" data-category="lawns">
+          <img src="Images/lawn/LAWN1.jpg" alt="Grand Marriage Lawn" loading="lazy">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Grand Marriage Lawn</span></div>
+        </div>
+        <div class="gallery-item" data-category="lawns">
+          <img src="Images/lawn/LAWN2.JPG" alt="Lawn Event Setup" loading="lazy">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Lawn Event Setup</span></div>
+        </div>
+        <div class="gallery-item" data-category="farm">
+          <img src="Images/Chikoo-farm/b1.png" alt="Chikoo Orchard" loading="lazy">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Chikoo Orchard</span></div>
+        </div>
+        <div class="gallery-item" data-category="farm">
+          <img src="Images/Camping/camp1.jpg" alt="Night Camping Tents" loading="lazy">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Night Camping Tents</span></div>
+        </div>
+        <div class="gallery-item" data-category="farm">
+          <img src="Images/Camping/camp2.jpg" alt="Camping & Bonfire Area" loading="lazy">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Camping & Bonfire Area</span></div>
+        </div>
+        <div class="gallery-item" data-category="farm lawns pool">
+          <img src="Images/Full%20farm%20360%20image/DJI_20260927133439_0019_D.JPG" alt="Aerial View of the Entire Farm" loading="lazy">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Aerial View of the Entire Farm</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       GUEST TESTIMONIALS
+       =================================================================== -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge badge-gold"><i class="fa-solid fa-comments"></i> Guest Reviews</span>
+        <h2 class="section-title">Loved by Families & Travelers</h2>
+        <p class="section-subtitle">
+          Discover why guests from Mumbai, Thane, Surat, and Vapi keep returning to Hotel Evergreen Dahanu for weekend getaways and grand celebrations.
+        </p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testimonial-text">
+            "We booked Hotel Evergreen for a 2-day family reunion over the weekend. The swimming pool was clean and refreshing, the family suite was extremely comfortable, and the Surmai fry at the restaurant was legendary! The Chikoo farm walk was loved by my parents."
+          </p>
+          <div class="testimonial-user">
+            <div class="user-avatar">RS</div>
+            <div class="user-details">
+              <h5>Rahul Sawant</h5>
+              <span>Borivali, Mumbai</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testimonial-text">
+            "Hosted my sister's wedding reception on the Evergreen marriage lawn. The open green space accommodated our 800+ guests with so much ease. The stage lighting and food catering were top-notch. Direct WhatsApp coordination with their manager made booking seamless!"
+          </p>
+          <div class="testimonial-user">
+            <div class="user-avatar">PJ</div>
+            <div class="user-details">
+              <h5>Pratiksha Joshi</h5>
+              <span>Thane West</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testimonial-text">
+            "The night camping experience with barbecue and bonfire under Dahanu's starry sky was the highlight of our road trip from Surat. Clean tents, polite staff, and genuine fresh organic Chikoos to take home. Highly recommended!"
+          </p>
+          <div class="testimonial-user">
+            <div class="user-avatar">AP</div>
+            <div class="user-details">
+              <h5>Aniket Patel</h5>
+              <span>Surat, Gujarat</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       LOCATION, GOOGLE MAPS & HOW TO REACH
+       =================================================================== -->
+  <section class="location-section" id="location">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-location-dot"></i> Getting Here</span>
+        <h2 class="section-title">Easily Accessible in Dahanu</h2>
+        <p class="section-subtitle">
+          Located in the tranquil Asave / Dahanu region, just minutes from the railway station and connected via smooth highways to Mumbai and Gujarat.
+        </p>
+      </div>
+
+      <div class="location-grid">
+        <div class="location-info-card">
+          <h3 class="font-serif" style="font-size: 1.6rem; color: var(--primary-dark); margin-bottom: 20px;">
+            Travel Directions & Distances
+          </h3>
+
+          <div class="location-item">
+            <div class="location-item-icon">
+              <i class="fa-solid fa-train"></i>
+            </div>
+            <div class="location-item-text">
+              <h4>From Dahanu Road Railway Station</h4>
+              <p>Just 8-12 minutes drive (approx. 5 km). Direct Western Railway local trains from Churchgate/Borivali and express trains from Mumbai & Gujarat.</p>
+            </div>
+          </div>
+
+          <div class="location-item">
+            <div class="location-item-icon">
+              <i class="fa-solid fa-car"></i>
+            </div>
+            <div class="location-item-text">
+              <h4>From Mumbai / Thane (NH-48)</h4>
+              <p>Around 130 km via Mumbai-Ahmedabad National Highway 48. A scenic 2.5 to 3 hours drive with smooth toll roads.</p>
+            </div>
+          </div>
+
+          <div class="location-item">
+            <div class="location-item-icon">
+              <i class="fa-solid fa-car-side"></i>
+            </div>
+            <div class="location-item-text">
+              <h4>From Vapi / Surat</h4>
+              <p>Approx. 55 km from Vapi (1 hour) and 160 km from Surat. Perfect weekend escape for Gujarat travelers.</p>
+            </div>
+          </div>
+
+          <div class="location-item">
+            <div class="location-item-icon">
+              <i class="fa-solid fa-umbrella-beach"></i>
+            </div>
+            <div class="location-item-text">
+              <h4>Nearby Attractions</h4>
+              <p>Dahanu Beach (15 mins), Bordi Beach (25 mins), Asavali Dam, Bahrot Caves, and ancient Parsi Fire Temple in Udvada.</p>
+            </div>
+          </div>
+
+          <div style="margin-top: 30px; display: flex; gap: 14px; flex-wrap: wrap;">
+            <a href="https://share.google/4agrEP8nls6xT2bJB" target="_blank" rel="noopener" class="btn btn-primary">
+              <i class="fa-solid fa-diamond-turn-right"></i> Open in Google Maps
+            </a>
+            <button class="btn btn-whatsapp" onclick="openWhatsApp('Hello Hotel Evergreen, please send me your live location on WhatsApp.')">
+              <i class="fa-brands fa-whatsapp"></i> Get Live Location on WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <!-- Interactive Map Container -->
+        <div class="map-container">
+          <!-- Fallback direct embed query for Dahanu Evergreen -->
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120000!2d72.73!3d19.97!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be72c6767676767%3A0x123456789abcdef!2sDahanu%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Hotel Evergreen Dahanu Map Location">
+          </iframe>
+          
+          <div class="map-floating-overlay">
+            <i class="fa-solid fa-location-dot" style="color: var(--accent-gold);"></i>
+            <span><strong>Hotel Evergreen</strong> • Dahanu, Maharashtra</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       FREQUENTLY ASKED QUESTIONS (FAQ)
+       =================================================================== -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge badge-gold"><i class="fa-solid fa-circle-question"></i> Got Questions?</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">
+          Everything you need to know about staying, dining, and celebrating at Hotel Evergreen Dahanu.
+        </p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item active">
+          <button class="faq-question">
+            <span>What are the check-in and check-out timings?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer" style="max-height: 200px;">
+            Standard Check-in time is 12:00 PM and Check-out is 10:00 AM. Early check-in or late check-out is subject to room availability upon prior request on WhatsApp.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How do I book rooms or banquet spaces?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            All our bookings are handled directly via WhatsApp at <strong>+91 9561936356</strong>. Simply select your desired dates on the website and click "Book on WhatsApp". Our reservation executive will immediately confirm availability and send your confirmation voucher.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is swimming pool access included with room stays?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            Yes! Complimentary swimming pool access is included with all room categories. We also offer affordable Day Picnic passes for visitors who only wish to use the pool and enjoy lunch at our restaurant without staying overnight.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Do you offer pure vegetarian and Jain food?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            Yes! In addition to our renowned coastal seafood and Agri chicken specialties, we have a dedicated pure vegetarian menu including Jain preparations (strictly prepared without onion, garlic, or root vegetables).
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can we host destination weddings and large marriage events?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            Absolutely! Our grand marriage lawn can accommodate from 300 up to 1,500+ guests. We offer turnkey packages covering stage mandap décor, wedding catering, lighting, DJ sound setup, bridal dressing suites, and guest room lodging.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can we visit the Chikoo Farm and buy fresh chikoos?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            Yes! Guests can enjoy guided morning or evening walks through our lush surrounding chikoo orchards. During the harvest season, you can also purchase freshly picked organic Dahanu chikoos directly from the farm at wholesale rates.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       FOOTER
+       =================================================================== -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>HOTEL EVERGREEN</h3>
+          <p>
+            Restaurant & Rooms • Dahanu, Maharashtra.<br>
+            Your serene nature oasis featuring AC & family accommodations, authentic coastal dining, marriage lawns, swimming pool, night camping, and lush chikoo orchards.
+          </p>
+          <div class="footer-socials">
+            <a href="https://wa.me/919561936356" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://share.google/4agrEP8nls6xT2bJB" target="_blank" rel="noopener" class="social-link" aria-label="Google Maps"><i class="fa-solid fa-location-dot"></i></a>
+            <a href="tel:9561936356" class="social-link" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Accommodations</h4>
+          <div class="footer-links">
+            <a href="javascript:void(0)" onclick="bookSpecificRoom('Deluxe AC Room')">Deluxe AC Room</a>
+            <a href="javascript:void(0)" onclick="bookSpecificRoom('Comfort Non-AC Room')">Comfort Non-AC Room</a>
+            <a href="javascript:void(0)" onclick="bookSpecificRoom('Grand Family Suite')">Grand Family Suite</a>
+            <a href="javascript:void(0)" onclick="bookSpecificRoom('Executive Double Bed')">Executive Double Bed</a>
+            <a href="javascript:void(0)" onclick="inquireFeature('camping')">Night Camping Tents</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Resort Amenities</h4>
+          <div class="footer-links">
+            <a href="#restaurant">Evergreen Restaurant</a>
+            <a href="#weddings">Marriage Lawn (1500+ Cap)</a>
+            <a href="#pool">Swimming Pool & Day Picnic</a>
+            <a href="#parties">Parties & Celebrations</a>
+            <a href="#chikoo">Chikoo Farm Agro-Tourism</a>
+            <a href="#amenities">Kids Play Park & Games</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Bookings</h4>
+          <div class="footer-contact-item">
+            <i class="fa-brands fa-whatsapp"></i>
+            <div>
+              <strong>WhatsApp Booking:</strong><br>
+              <a href="https://wa.me/919561936356" target="_blank" rel="noopener" style="color: var(--accent-gold-light); font-weight: 700;">+91 9561936356</a>
+            </div>
+          </div>
+
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <strong>Direct Calling:</strong><br>
+              <a href="tel:9561936356" style="color: #ffffff;">9561936356</a>
+            </div>
+          </div>
+
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-map-pin"></i>
+            <div>
+              <strong>Location:</strong><br>
+              <a href="https://share.google/4agrEP8nls6xT2bJB" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.75);">Hotel Evergreen, Dahanu, Maharashtra</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="currentYear">2026</span> Hotel Evergreen Restaurant & Rooms Dahanu. All Rights Reserved.
+        </div>
+        <div>
+          Enquiries & Bookings powered directly via <a href="https://wa.me/919561936356" target="_blank" rel="noopener" style="color: var(--whatsapp-green); font-weight: 700;"><i class="fa-brands fa-whatsapp"></i> WhatsApp: 9561936356</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================
+       FLOATING WHATSAPP ACTION BUTTON
+       =================================================================== -->
+  <div class="floating-whatsapp-btn" onclick="openWhatsApp('Hello Hotel Evergreen Dahanu, I want to book a room and inquire about resort packages.')" role="button" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <div class="floating-whatsapp-tooltip">Chat with us on WhatsApp</div>
+  </div>
+
+  <!-- ===================================================================
+       STICKY MOBILE ACTION BAR
+       =================================================================== -->
+  <div class="mobile-bottom-bar">
+    <div class="mobile-bottom-actions">
+      <a href="tel:9561936356" class="btn btn-primary">
+        <i class="fa-solid fa-phone"></i> Call
+      </a>
+      <button class="btn btn-whatsapp" onclick="openWhatsApp('Hello Hotel Evergreen Dahanu, I want to inquire about bookings.')">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      </button>
+      <a href="https://share.google/4agrEP8nls6xT2bJB" target="_blank" rel="noopener" class="btn btn-gold">
+        <i class="fa-solid fa-diamond-turn-right"></i> Maps
+      </a>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       INTERACTIVE BOOKING MODAL POPUP
+       =================================================================== -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <h3>Reserve Your Experience</h3>
+          <p style="font-size: 0.8rem; color: rgba(255,255,255,0.85); margin-top: 2px;">Instant Confirmation via WhatsApp: 9561936356</p>
+        </div>
+        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-whatsapp-preview">
+          <i class="fa-brands fa-whatsapp"></i> <strong>WhatsApp Booking Engine:</strong> Your reservation details will be sent directly to our reservation desk at <strong>9561936356</strong>.
+        </div>
+
+        <form id="modalBookingForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label><i class="fa-solid fa-user"></i> Full Name *</label>
+              <input type="text" id="modalName" placeholder="e.g. Rajesh Sharma" required>
+            </div>
+            <div class="form-group">
+              <label><i class="fa-solid fa-phone"></i> Phone Number *</label>
+              <input type="tel" id="modalPhone" placeholder="e.g. 9876543210" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label><i class="fa-solid fa-hotel"></i> Stay or Experience Required *</label>
+            <select id="modalCategory" required>
+              <option value="Deluxe AC Room">Deluxe AC Room</option>
+              <option value="Comfort Non-AC Room">Comfort Non-AC Room</option>
+              <option value="Spacious Family Suite">Spacious Family Suite</option>
+              <option value="Executive Double Bed">Executive Double Bed</option>
+              <option value="Marriage Lawn / Wedding Event">Marriage Lawn & Banquet Hall</option>
+              <option value="Birthday / Anniversary Party">Private Party / Celebration</option>
+              <option value="Swimming Pool Day Picnic">Swimming Pool Day Pass / Picnic</option>
+              <option value="Night Camping & Bonfire">Night Camping & Bonfire Tent</option>
+              <option value="Chikoo Farm Agro Tour">Chikoo Farm Agro-Tourism Visit</option>
+              <option value="Restaurant Table Reservation">Restaurant Dining Table Reservation</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label><i class="fa-solid fa-calendar-day"></i> Check-In Date</label>
+              <input type="date" id="modalCheckIn" required>
+            </div>
+            <div class="form-group">
+              <label><i class="fa-solid fa-calendar-check"></i> Check-Out Date</label>
+              <input type="date" id="modalCheckOut" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label><i class="fa-solid fa-users"></i> Number of Guests / Details</label>
+            <input type="text" id="modalGuests" placeholder="e.g. 2 Adults, 1 Child" required>
+          </div>
+
+          <div class="form-group">
+            <label><i class="fa-solid fa-pen"></i> Special Requests (Optional)</label>
+            <textarea id="modalNotes" rows="2" placeholder="e.g. Pool view room preferred, Jain food requirement, late check-in..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-whatsapp" style="width: 100%; padding: 14px; font-size: 1rem; border-radius: var(--radius-sm);">
+            <i class="fa-brands fa-whatsapp fa-lg"></i> Send Booking on WhatsApp (9561936356)
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       IMAGE LIGHTBOX VIEWER
+       =================================================================== -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close Lightbox">&times;</button>
+    <div class="lightbox-img-wrap">
+      <img src="" id="lightboxImg" alt="Enlarged View">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="js/main.js"></script>
+  <script src="js/panorama360.js"></script>
+</body>
+</html>
