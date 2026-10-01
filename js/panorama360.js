@@ -14,23 +14,33 @@ document.addEventListener('DOMContentLoaded', () => {
   const AREAS = [
     { key: 'farm', label: 'Full Farm 360°', icon: 'fa-vr-cardboard', pano: true, images: [FARM],
       title: 'Full Farm Aerial 360°', desc: 'See the whole Evergreen property from above: lawn, pool, restaurant, rooms and the surrounding chikoo orchards. Drag to look around.',
-      perks: ['Drag, or tilt your phone (Gyro)', 'Pinch / scroll to zoom', 'Tap Auto to rotate'], wa: 'default' },
+      perks: ['Drag, or tilt your phone (Gyro)', 'Pinch / scroll to zoom', 'Tap the glowing markers to open an area'], wa: 'default',
+      // HOTSPOTS: yaw = left/right angle in degrees (0 = centre of the image, + = right), pitch = up/down (- = below horizon).
+      // To place them exactly: open the site with  ?edit  at the end of the URL, click a spot in the 360 view and copy the yaw/pitch shown.
+      hotspots: [
+        { to: 'lawn',       yaw:   290, pitch: -10 },
+        { to: 'pool',       yaw:   160, pitch: -0 },
+        { to: 'restaurant', yaw:  280, pitch: -0 },
+        { to: 'rooms',      yaw: 10, pitch: -10 },
+        { to: 'camping',    yaw: 100, pitch: -0 },
+        { to: 'chikoo',     yaw:  240, pitch: -5 }
+      ] },
     { key: 'lawn', label: 'Marriage Lawn', icon: 'fa-champagne-glasses', images: ['lawn/LAWN1.jpg', 'lawn/LAWN2.JPG'].map(P),
       title: 'Grand Marriage Lawn', desc: 'Open-air green lawn for weddings, receptions and big celebrations, with space for 300 to 1,500+ guests.',
       perks: ['Stage & mandap setups', 'Catering for Veg, Jain & Non-Veg', 'Ample parking'], wa: 'wedding' },
-    { key: 'pool', label: 'Swimming Pool', icon: 'fa-water-ladder', images: ['1.JPEG', '2.JPEG', '3.JPEG', '4.PNG'].map(f => P('Pool/' + f)),
+    { key: 'pool', label: 'Swimming Pool', icon: 'fa-water-ladder', images: ['1.jpeg', '2.jpeg', '3.jpeg', '4.png'].map(f => P('Pool/' + f)),
       title: 'Swimming Pool', desc: 'Crystal-clear pool surrounded by palms and chikoo trees, with a shallow kids zone and poolside loungers.',
       perks: ['Kids shallow zone', 'Sunbeds & towels', 'Day picnic passes'], wa: 'pool' },
-    { key: 'restaurant', label: 'Restaurant', icon: 'fa-utensils', images: ['RES1.JPEG', 'RES2.JPG', 'RES3.JPG', 'RES4.JPG', 'RES5.JPG'].map(f => P('restaurant/' + f)),
+    { key: 'restaurant', label: 'Restaurant', icon: 'fa-utensils', images: ['RES1.jpeg', 'RES2.jpg', 'RES3.jpg', 'RES4.jpg', 'RES5.jpg'].map(f => P('restaurant/' + f)),
       title: 'Evergreen Restaurant', desc: 'Garden dining with fresh coastal seafood, Agri specialties, pure veg and Jain dishes.',
       perks: ['Fresh daily seafood catch', 'Pure veg & Jain menu', 'Chikoo milkshake & desserts'], wa: 'restaurant' },
     { key: 'menu', label: 'Menu Card', icon: 'fa-book-open', fit: 'contain', images: [P('Menu-card/menu-card.png')],
       title: 'Restaurant Menu Card', desc: 'Browse our full menu, then reserve a table or order straight on WhatsApp.',
       perks: ['Coastal seafood', 'Agri & desi non-veg', 'Veg, Jain & chikoo desserts'], wa: 'restaurant' },
-    { key: 'rooms', label: 'Rooms', icon: 'fa-bed', images: [1, 2, 3, 4, 5, 6, 7, 8].map(n => P('Room/' + n + '.JPEG')),
+    { key: 'rooms', label: 'Rooms', icon: 'fa-bed', images: [1, 2, 3, 4, 5, 6, 7, 8].map(n => P('Room/' + n + '.jpeg')),
       title: 'Rooms & Suites', desc: 'AC, Non-AC, Double bed and Family suites with garden and orchard views.',
       perks: ['AC, Non-AC & Double bed rooms', 'Family suites for 4 to 6', 'Wi-Fi & hot water'], wa: 'default' },
-    { key: 'camping', label: 'Camping', icon: 'fa-campground', images: ['camp1.jpg', 'camp2.jpg'].map(f => P('Camping/' + f)),
+    { key: 'camping', label: 'Camping', icon: 'fa-campground', images: ['camp1.jpg', 'camp2.jpg', 'camp3.jpg'].map(f => P('Camping/' + f)),
       title: 'Night Camping & Bonfire', desc: 'Pitch a tent on green grounds, gather around the bonfire and sleep under the stars.',
       perks: ['Tents with bedding', 'Bonfire & barbecue', 'Safe, gated grounds'], wa: 'camping' },
     { key: 'chikoo', label: 'Chikoo Farm', icon: 'fa-tree', images: [P('Chikoo-farm/b1.png')],
@@ -42,9 +52,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------- TRUE 360 SPHERE (WebGL2, equirectangular) ----------
   const Sphere = (() => {
     const cv = document.getElementById('tourSphere');
-    let gl = null, prog = null, tex = null, U = {}, ok = false, raf = 0, running = false, loadId = 0;
+    let gl = null, prog = null, tex = null, U = {}, ok = false, raf = 0, running = false, loadId = 0, onFrame = null;
     const S = { yaw: 0, pitch: 0, fov: 75, auto: false, gyro: false, yawOff: 0, hasGyro: false,
-      fwd: [0, 0, -1], right: [1, 0, 0], up: [0, 1, 0], vspan: Math.PI, lastEv: null };
+      fwd: [0, 0, -1], right: [1, 0, 0], up: [0, 1, 0], vspan: Math.PI, lastEv: null,
+      fovT: 75, vy: 0, vp: 0, dragging: false, lastMove: 0 };
     const D2R = Math.PI / 180;
 
     const VS = `#version 300 es
@@ -59,8 +70,7 @@ void main(){
   float lon = atan(d.x, -d.z);
   float lat = asin(clamp(d.y,-1.,1.));
   float u = 0.5 + lon/(2.*PI);
-  float w = 0.5 - lat/vspan;
-  if (w < 0. || w > 1.) { o = vec4(0.04,0.13,0.11,1.); return; }
+  float w = abs(mod(0.5 - lat/vspan + 1., 2.) - 1.);   // mirror-fold: image continues above/below instead of black
   float u2 = fract(u+0.5)-0.5;
   vec2 g1 = vec2(u ,w), g2 = vec2(u2,w);
   vec2 dx = length(dFdx(g1)) <= length(dFdx(g2)) ? dFdx(g1) : dFdx(g2);
@@ -114,7 +124,7 @@ void main(){
             if (an) gl.texParameterf(gl.TEXTURE_2D, an.TEXTURE_MAX_ANISOTROPY_EXT, Math.min(8, gl.getParameter(an.MAX_TEXTURE_MAX_ANISOTROPY_EXT)));
             // full sphere is 2:1. Narrower (taller) ratios cover less than 180 deg vertically.
             S.vspan = Math.min(Math.PI, (2 * Math.PI) / (w / h));
-            S.yaw = 0; S.pitch = 0; S.fov = 75; S.yawOff = 0;
+            S.yaw = 0; S.pitch = -0.2; S.fov = 105; S.fovT = 75; S.yawOff = 0; S.vy = S.vp = 0;   // intro: smoothly zooms in
             ok = true; resize(); res(true);
           } catch (e) { console.warn('360 texture failed, using flat panorama', e); res(false); }
         };
@@ -173,24 +183,30 @@ void main(){
       gl.uniform3fv(U.R, S.right); gl.uniform3fv(U.Up, S.up); gl.uniform3fv(U.F, S.fwd);
       gl.uniform1f(U.tanH, Math.tan(S.fov * D2R / 2)); gl.uniform1f(U.aspect, cv.width / cv.height); gl.uniform1f(U.vspan, S.vspan);
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+      if (onFrame) onFrame();
     }
     function loop() {
       if (!running) return;
       if (S.auto && !S.gyro) S.yaw += 0.0022;
+      if (Math.abs(S.fovT - S.fov) > 0.01) S.fov += (S.fovT - S.fov) * 0.14;          // smooth zoom
+      if (!S.dragging && !S.gyro && (Math.abs(S.vy) > 1e-5 || Math.abs(S.vp) > 1e-5)) { // momentum after a drag
+        S.yaw += S.vy; S.pitch += S.vp; clampPitch(); S.vy *= 0.94; S.vp *= 0.94;
+      }
       draw(); raf = requestAnimationFrame(loop);
     }
     const start = () => { if (!running) { running = true; raf = requestAnimationFrame(loop); } };
     const stop = () => { running = false; cancelAnimationFrame(raf); };
 
     // clamp helpers
-    const clampPitch = () => { const lim = Math.min(Math.PI/2 - 0.02, (S.vspan / 2)); S.pitch = Math.max(-lim, Math.min(lim, S.pitch)); };
+    const clampPitch = () => { const lim = Math.PI/2 - 0.02; S.pitch = Math.max(-lim, Math.min(lim, S.pitch)); };
     const look = (dx, dy) => {   // dx,dy in pixels
       const k = S.fov * D2R / (cv.clientHeight || 400);
       if (S.gyro) { S.yawOff += dx * k; return; }
       S.yaw -= dx * k; S.pitch += dy * k; clampPitch();
+      if (S.dragging) { S.vy = -dx * k; S.vp = dy * k; S.lastMove = performance.now(); }
     };
     const turn = (deg) => { if (S.gyro) S.yawOff -= deg * D2R; else S.yaw += deg * D2R; };
-    const zoom = (f) => { S.fov = Math.max(30, Math.min(100, S.fov + f)); };
+    const zoom = (f) => { S.fovT = Math.max(35, Math.min(100, S.fovT + f)); };
 
     // ----- gyro -----
     const onDev = (e) => {
@@ -219,7 +235,23 @@ void main(){
       S.gyro = false; S.lastEv = null;
     }
 
+    // yaw/pitch (deg) -> normalised screen coords (-1..1), or null when behind the viewer
+    const project = (yawDeg, pitchDeg) => {
+      const y = yawDeg * D2R, p = pitchDeg * D2R;
+      const d = [Math.sin(y) * Math.cos(p), Math.sin(p), -Math.cos(y) * Math.cos(p)];
+      const f = dot(d, S.fwd); if (f <= 0.05) return null;
+      const th = Math.tan(S.fov * D2R / 2), asp = cv.width / cv.height;
+      return { x: dot(d, S.right) / f / (th * asp), y: dot(d, S.up) / f / th };
+    };
+    // normalised screen coords -> yaw/pitch (deg)
+    const unproject = (nx, ny) => {
+      const th = Math.tan(S.fov * D2R / 2), asp = cv.width / cv.height;
+      const v = norm([0, 1, 2].map(i => S.fwd[i] + S.right[i] * nx * th * asp + S.up[i] * ny * th));
+      return { yaw: Math.atan2(v[0], -v[2]) / D2R, pitch: Math.asin(v[1]) / D2R };
+    };
+
     return { S, load, start, stop, look, turn, zoom, resize, enableGyro, disableGyro, isOk: () => ok,
+      project, unproject, setOnFrame: (f) => { onFrame = f; },
       setAuto: (v) => { S.auto = v; }, canvas: cv };
   })();
 
@@ -228,10 +260,15 @@ void main(){
   const stage = $('tourStage');
   if (stage) {
     const toast = $('tourToast'); let toastT = 0;
-    const say = (m) => { toast.textContent = m; toast.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => toast.classList.remove('show'), 3200); };
+    const say = (m, ms = 3200) => { toast.textContent = m; toast.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => toast.classList.remove('show'), ms); };
     const pano = $('tourPano'), panoImg = $('tourPanoImg'), photo = $('tourPhoto');
+    const tiles = [panoImg];                                   // flat mode: 2 cols x 4 rows of tiles, odd rows mirrored = endless in every direction
+    for (let i = 1; i < 8; i++) { const t = panoImg.cloneNode(); t.removeAttribute('id'); panoImg.parentNode.appendChild(t); tiles.push(t); }
+    const hsBox = $('tourHotspots'), backBtn = $('tourBack'); let hsEls = [];
+    const D2R = Math.PI / 180, R2D = 180 / Math.PI;
+    const EDIT = /[?&#]edit/.test(location.href);
     let area = AREAS[0], idx = 0, mode = 'flat';   // mode: 'sphere' (true 360) | 'flat' (fallback)
-    const st = { x: 0, y: 0, zoom: 1, nw: 0, nh: 0, auto: false, dir: -1, raf: 0 };
+    const st = { x: 0, y: 0, zoom: 1, nw: 0, nh: 0, vspan: Math.PI, auto: false, dir: -1, raf: 0 };
 
     // chips
     $('tourChips').innerHTML = AREAS.map(a => `<button class="tour-chip" data-key="${a.key}" role="tab"><i class="fa-solid ${a.icon}"></i> ${a.label}</button>`).join('');
@@ -245,11 +282,56 @@ void main(){
     };
     const apply = () => {
       const d = dims();
-      st.x = Math.min(0, Math.max(d.W - d.w, st.x));
-      st.y = Math.min(0, Math.max(d.H - d.h, st.y));
-      panoImg.style.width = d.w + 'px'; panoImg.style.height = d.h + 'px';
-      panoImg.style.transform = `translate(${st.x}px,${st.y}px)`;
+      st.x = ((st.x % d.w) + d.w) % d.w - d.w;                 // endless left/right: x in [-w, 0)
+      st.y = ((st.y % (2 * d.h)) + 2 * d.h) % (2 * d.h) - 2 * d.h; // endless up/down: y in [-2h, 0)
+      tiles.forEach((im, i) => {
+        const c = i % 2, r = i >> 1, flip = r % 2 === 1;
+        im.style.width = d.w + 'px'; im.style.height = d.h + 'px';
+        im.style.transform = `translate(${st.x + c * d.w}px,${st.y + (flip ? (r + 1) : r) * d.h}px)` + (flip ? ' scaleY(-1)' : '');
+      });
+      placeFlat(d);
     };
+
+    // --- hotspots (links to the other areas) ---
+    const buildHotspots = () => {
+      hsBox.innerHTML = ''; hsEls = [];
+      (area.hotspots || []).forEach(h => {
+        const t = AREAS.find(a => a.key === h.to); if (!t) return;
+        const el = document.createElement('button');
+        el.className = 'tour-hs'; el.style.display = 'none'; el.setAttribute('aria-label', 'Open ' + t.label);
+        el.innerHTML = `<span class="dot"><i class="fa-solid ${t.icon}"></i></span><span class="lbl">${t.label}</span>`;
+        el.onclick = () => { selectArea(h.to); stage.scrollIntoView({ behavior: 'smooth', block: 'center' }); };
+        hsBox.appendChild(el); hsEls.push({ el, h });
+      });
+    };
+    const putHs = (el, px, py, W, H) => {
+      if (px < -50 || px > W + 50 || py < -50 || py > H + 50) { el.style.display = 'none'; return; }
+      el.style.display = ''; el.style.left = px + 'px'; el.style.top = py + 'px';
+    };
+    const placeSphere = () => {
+      const W = stage.clientWidth, H = stage.clientHeight;
+      hsEls.forEach(({ el, h }) => {
+        const p = Sphere.project(h.yaw, h.pitch);
+        if (!p || Math.abs(p.x) > 1.08 || Math.abs(p.y) > 1.08) { el.style.display = 'none'; return; }
+        putHs(el, (p.x + 1) / 2 * W, (1 - p.y) / 2 * H, W, H);
+      });
+    };
+    function placeFlat(d) {
+      if (!hsEls.length || mode === 'sphere' || !st.nw) return;
+      hsEls.forEach(({ el, h }) => {
+        const u = ((((h.yaw + 180) % 360) + 360) % 360) / 360;
+        let px = (((st.x + u * d.w) % d.w) + d.w) % d.w; if (px > d.W + 50) px -= d.w;
+        const f = Math.max(0, Math.min(1, 0.5 - h.pitch * D2R / st.vspan));
+        let py = null;
+        for (const base of [st.y + f * d.h, st.y + (2 - f) * d.h]) {      // normal + mirrored copy
+          for (let k = -1; k <= 1 && py === null; k++) { const v = base + k * 2 * d.h; if (v > -50 && v < d.H + 50) py = v; }
+          if (py !== null) break;
+        }
+        if (py === null) { el.style.display = 'none'; return; }
+        putHs(el, px, py, d.W, d.H);
+      });
+    }
+    Sphere.setOnFrame(placeSphere);
     const setZoom = (z) => {
       const d0 = dims(), cx = (d0.W / 2 - st.x) / d0.w, cy = (d0.H / 2 - st.y) / d0.h;
       st.zoom = Math.min(3, Math.max(1, z));
@@ -260,10 +342,7 @@ void main(){
       if (mode === 'sphere') { Sphere.setAuto(on); return; }
       if (!on) return;
       const tick = () => {
-        const d = dims(), min = d.W - d.w;
-        st.x += st.dir * 0.35;
-        if (st.x <= min) { st.x = min; st.dir = 1; } else if (st.x >= 0) { st.x = 0; st.dir = -1; }
-        apply(); st.raf = requestAnimationFrame(tick);
+        st.x -= 0.35; apply(); st.raf = requestAnimationFrame(tick);
       };
       st.raf = requestAnimationFrame(tick);
     };
@@ -272,7 +351,16 @@ void main(){
     // drag (mouse + touch via pointer events)
     let drag = null;
     const pts = new Map(); let pinch0 = 0, fov0 = 75;
+    let downPt = [0, 0];
+    pano.addEventListener('click', e => {                      // ?edit mode: click the scene to read yaw/pitch for a hotspot
+      if (!EDIT || Math.hypot(e.clientX - downPt[0], e.clientY - downPt[1]) > 6) return;
+      const r = pano.getBoundingClientRect(); let yaw, pitch;
+      if (mode === 'sphere') { const a = Sphere.unproject((e.clientX - r.left) / r.width * 2 - 1, 1 - (e.clientY - r.top) / r.height * 2); yaw = a.yaw; pitch = a.pitch; }
+      else { const d = dims(); const u = (((e.clientX - r.left - st.x) / d.w) % 1 + 1) % 1; yaw = (u - 0.5) * 360; let yy = (((e.clientY - r.top - st.y) % (2 * d.h)) + 2 * d.h) % (2 * d.h); if (yy > d.h) yy = 2 * d.h - yy; pitch = (0.5 - yy / d.h) * st.vspan * R2D; }
+      const t = `yaw: ${Math.round(yaw)}, pitch: ${Math.round(pitch)}`; console.log(t); say(t);
+    });
     pano.addEventListener('pointerdown', e => {
+      downPt = [e.clientX, e.clientY]; Sphere.S.dragging = true; Sphere.S.vy = Sphere.S.vp = 0;
       pts.set(e.pointerId, [e.clientX, e.clientY]);
       drag = { x: e.clientX, y: e.clientY, sx: st.x, sy: st.y, lx: e.clientX, ly: e.clientY };
       pano.classList.add('dragging'); pano.setPointerCapture(e.pointerId);
@@ -284,12 +372,12 @@ void main(){
       if (!drag) return;
       if (pts.has(e.pointerId)) pts.set(e.pointerId, [e.clientX, e.clientY]);
       if (mode === 'sphere') {
-        if (pts.size === 2) { const [a, b] = [...pts.values()]; const d = Math.hypot(a[0]-b[0], a[1]-b[1]); if (pinch0) Sphere.S.fov = Math.max(30, Math.min(100, fov0 * pinch0 / d)); return; }
+        if (pts.size === 2) { const [a, b] = [...pts.values()]; const d = Math.hypot(a[0]-b[0], a[1]-b[1]); if (pinch0) Sphere.S.fov = Sphere.S.fovT = Math.max(35, Math.min(100, fov0 * pinch0 / d)); return; }
         Sphere.look(e.clientX - drag.lx, e.clientY - drag.ly); drag.lx = e.clientX; drag.ly = e.clientY; return;
       }
       st.x = drag.sx + e.clientX - drag.x; st.y = drag.sy + e.clientY - drag.y; apply();
     });
-    ['pointerup', 'pointercancel'].forEach(t => pano.addEventListener(t, e => { pts.delete(e.pointerId); if (!pts.size) { drag = null; pano.classList.remove('dragging'); } else { const p = [...pts.values()][0]; drag = { ...drag, lx: p[0], ly: p[1] }; } }));
+    ['pointerup', 'pointercancel'].forEach(t => pano.addEventListener(t, e => { pts.delete(e.pointerId); if (!pts.size) { drag = null; pano.classList.remove('dragging'); Sphere.S.dragging = false; if (performance.now() - Sphere.S.lastMove > 70) Sphere.S.vy = Sphere.S.vp = 0; } else { const p = [...pts.values()][0]; drag = { ...drag, lx: p[0], ly: p[1] }; } }));
     pano.addEventListener('wheel', e => { if (mode !== 'sphere') return; e.preventDefault(); Sphere.zoom(e.deltaY * 0.04); }, { passive: false });
     $('panLeft').onclick = () => nudge(160); $('panRight').onclick = () => nudge(-160);
     $('zoomIn').onclick = () => mode === 'sphere' ? Sphere.zoom(-10) : setZoom(st.zoom + 0.35);
@@ -335,9 +423,10 @@ void main(){
       $('tourPerks').innerHTML = area.perks.map(p => `<li><i class="fa-solid fa-circle-check"></i>${p}</li>`).join('');
       $('tourCta').onclick = () => window.inquireFeature && window.inquireFeature(area.wa);
       $('tourThumbs').innerHTML = area.images.length > 1 ? area.images.map((s, n) => `<button aria-label="Photo ${n + 1}"><img src="${s}" alt="" loading="lazy"></button>`).join('') : '';
+      buildHotspots();
       if (area.pano) {
-        $('tourHint').classList.remove('hide'); $('tourHintText').textContent = 'Drag to look around';
-        const key0 = area.key;
+        $('tourHint').classList.remove('hide'); $('tourHintText').textContent = 'Drag to look around. Tap a marker to open that area';
+        const key0 = area.key; say('Loading 360° view…', 2500);
         Sphere.load(area.images[0]).then(okSphere => {
           if (area.key !== key0) return;                       // user already switched area
           if (okSphere) {                                      // TRUE 360
@@ -345,15 +434,18 @@ void main(){
             Sphere.resize(); Sphere.start(); setAuto(true);
           } else {                                             // fallback: flat panorama
             mode = 'flat'; gyroBtn.disabled = true;
-            const load = () => { st.nw = panoImg.naturalWidth; st.nh = panoImg.naturalHeight; st.zoom = 1; st.x = 0; st.y = 0; apply(); setAuto(true); };
+            const load = () => { st.nw = panoImg.naturalWidth; st.nh = panoImg.naturalHeight; st.vspan = Math.min(Math.PI, (2 * Math.PI) / (st.nw / st.nh)); st.zoom = 1; st.x = 0; st.y = (dims().H - dims().h) / 2; apply(); setAuto(true); };
+            tiles.forEach(t => { if (t !== panoImg) t.src = area.images[0]; });
             panoImg.onload = load; panoImg.src = area.images[0]; panoImg.alt = area.title;
             if (panoImg.complete && panoImg.naturalWidth) load();
+            if (location.protocol === 'file:') say('Flat preview only: a browser cannot build the real 360° sphere from a double-clicked file. Run start-server.bat (or upload the site) to see the true 360°.', 9000);
           }
         });
       } else { show(0); }
     }
     $('tourThumbs').addEventListener('click', e => { const b = e.target.closest('button'); if (b) show([...b.parentNode.children].indexOf(b)); });
     $('tourPrev').onclick = () => show(idx - 1); $('tourNext').onclick = () => show(idx + 1);
+    backBtn.onclick = () => selectArea('farm');
     $('tourNextArea').onclick = () => selectArea(AREAS[(AREAS.indexOf(area) + 1) % AREAS.length].key);
     $('tourFs').onclick = () => document.fullscreenElement ? document.exitFullscreen() : (stage.requestFullscreen && stage.requestFullscreen());
     document.addEventListener('fullscreenchange', () => setTimeout(() => { if (mode === 'sphere') Sphere.resize(); else if (area.pano && st.nw) apply(); }, 60));
@@ -366,7 +458,7 @@ void main(){
     photo.addEventListener('click', () => window.openLightbox && window.openLightbox(area.images[idx], area.title));
     document.addEventListener('keydown', e => {
       if (!stage.matches(':hover') && document.fullscreenElement !== stage) return;
-      if (area.pano) { if (e.key === 'ArrowLeft') nudge(160); if (e.key === 'ArrowRight') nudge(-160); if (mode === 'sphere') { if (e.key === 'ArrowUp') Sphere.look(0, -40); if (e.key === 'ArrowDown') Sphere.look(0, 40); } }
+      if (area.pano) { if (e.key === 'ArrowLeft') nudge(160); if (e.key === 'ArrowRight') nudge(-160); if (e.key === 'ArrowUp' || e.key === 'ArrowDown') { const dy = e.key === 'ArrowUp' ? 40 : -40; if (mode === 'sphere') Sphere.look(0, -dy); else { setAuto(false); st.y += dy; apply(); } } }
       else { if (e.key === 'ArrowLeft') show(idx - 1); if (e.key === 'ArrowRight') show(idx + 1); }
     });
 

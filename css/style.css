@@ -2476,3 +2476,16 @@ nav { flex: 1 1 auto; display: flex; justify-content: center; min-width: 0; }
 .tour-toast { position: absolute; left: 50%; top: 60px; transform: translate(-50%, -8px); z-index: 4; max-width: 86%; padding: 9px 16px; border-radius: 12px; background: rgba(0,0,0,.75); color: #fff; font-size: .84rem; text-align: center; opacity: 0; pointer-events: none; transition: .3s; }
 .tour-toast.show { opacity: 1; transform: translate(-50%, 0); }
 .tour-stage:not(.is-pano) .tour-toast { display: none; }
+
+/* ---- 360 hotspots + back button ---- */
+.tour-hotspots { position: absolute; inset: 0; z-index: 2; pointer-events: none; overflow: hidden; }
+.tour-hs { position: absolute; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 0; border: 0; background: none; color: #fff; cursor: pointer; pointer-events: auto; }
+.tour-hs .dot { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; font-size: 1rem; background: var(--accent-gold); color: var(--primary-dark); border: 2px solid #fff; animation: hsPulse 2s infinite; transition: transform .2s; }
+.tour-hs .lbl { padding: 4px 10px; border-radius: 999px; background: rgba(15,46,40,.85); font: 600 .75rem var(--font-body); white-space: nowrap; }
+.tour-hs:hover .dot { transform: scale(1.15); }
+@keyframes hsPulse { 0% { box-shadow: 0 0 0 0 rgba(212,175,55,.75); } 70% { box-shadow: 0 0 0 14px rgba(212,175,55,0); } 100% { box-shadow: 0 0 0 0 rgba(212,175,55,0); } }
+.tour-back { display: none; position: absolute; top: 14px; right: 62px; z-index: 4; align-items: center; gap: 8px; height: 38px; padding: 0 14px; border: 0; border-radius: 10px; cursor: pointer; color: #fff; background: rgba(15,46,40,.78); font: 600 .82rem var(--font-body); backdrop-filter: blur(6px); transition: var(--transition); }
+.tour-back:hover { background: var(--accent-gold); color: var(--primary-dark); }
+.tour-stage:not(.is-pano) .tour-back { display: inline-flex; }
+.tour-stage:not(.is-pano) .tour-hotspots { display: none; }
+@media (max-width: 560px) { .tour-hs .dot { width: 34px; height: 34px; font-size: .85rem; } .tour-hs .lbl { font-size: .68rem; padding: 3px 8px; } .tour-back { font-size: .74rem; padding: 0 10px; } }
