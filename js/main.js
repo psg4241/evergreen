@@ -4,7 +4,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  const WHATSAPP_NUMBER = '919561936356'; // 9561936356 with India country code
+  const WHATSAPP_NUMBER = '9226422375'; // 9226422375 with India country code
   const GOOGLE_MAPS_LINK = 'https://share.google/4agrEP8nls6xT2bJB';
 
   // ===================================================================
